@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Routes, Route} from "react-router-dom";
 import Home from "./HomeComponent";
 import Header from "./HeaderComponent";
+import Footer from "./FooterComponent";
 
 class Main extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class Main extends Component {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     );
   }
