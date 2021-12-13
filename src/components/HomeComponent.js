@@ -28,6 +28,7 @@ export default function Home(props) {
       .then((data) => {
         setResult(data);
         console.log(data)
+        window.location.href = "#hasil";
       });
   };
 
@@ -145,7 +146,7 @@ export default function Home(props) {
         </div>
       </section>
 
-      <section className="hasil" style={{ marginTop: 300 }}>
+      <section id="hasil" className="hasil" style={{ marginTop: 300 }}>
         <img
           className="position-absolute start-0"
           style={{ marginLeft: 30 }}
