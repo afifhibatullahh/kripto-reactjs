@@ -2,6 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
+    <section id="footer">
+
     <div className="container" style={{ marginTop: 200, }}>
       <div className="row d-flex justify-content-center">
         <p className="text-center txt-border" style={{ fontSize: 36 }}>
@@ -16,7 +18,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="col-6">
-          <p>
+          <p className="text-center">
             Intended for major assignments in cryptography courses Sumatra
             Institute of Technology, informatics engineering.
           </p>
@@ -26,12 +28,13 @@ const Footer = () => {
         </p>
         <p className="text-center" style={{marginBottom:150}}>Alfarizi Afif Fajari Nagachi Rizqi </p>
         <img
-          className="position-absolute end-0"
+          className="position-absolute end-0 d-none d-sm-block"
           style={{ width: 90,  marginRight: 30, marginTop:120 }}
           src="./assets/images/squid2.png"
         />
       </div>
     </div>
+    </section>
   );
 };
 

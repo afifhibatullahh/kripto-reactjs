@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 
 export default function Home(props) {
   const API_URL = "https://kriptografi-api.herokuapp.com/api/cryptography";
@@ -41,12 +42,17 @@ export default function Home(props) {
 
   return (
     <div className="container">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Kriptos Grafos</title>
+      </Helmet>
+
       <div className="row">
-        <div className="col-8" style={{ marginTop: 200 }}>
-          <p style={{ fontSize: 64 }} className="txt-border">
+        <div className="col-8 jumbotron">
+          <p className="txt-border title">
             Do Simple Magic
           </p>
-          <p style={{ fontSize: 64 }}>With Cryptography</p>
+          <p className="title">With Cryptography</p>
           <p>
             do a simple magic using cryptography, you can use several spells
             like monoalphabetic, transposition, Steganography, and other spells
@@ -59,7 +65,7 @@ export default function Home(props) {
         </div>
         <div className="col-4">
           <img
-            className="position-absolute top-0 end-0"
+            className="position-absolute top-0 end-0 d-none d-lg-block" style={{marginTop:35}}
             src="./assets/images/KRIPTOSCIRCLE.png"
           ></img>
         </div>
@@ -72,11 +78,11 @@ export default function Home(props) {
               className="img-line1 position-absolute start-0"
               src="./assets/images/line1.png"
             />
-            <p style={{ fontSize: 48 }}>
+            <p className="title2">
               Encrypt your messages easily to protect your privacy
             </p>
           </div>
-          <div className="col-6">
+          <div className="col-12 col-lg-6">
             <form onSubmit={submit}>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">
@@ -141,7 +147,7 @@ export default function Home(props) {
               </div>
             </form>
           </div>
-          <div className="col offset-1">
+          <div className="col offset-1 d-none d-lg-block">
             <img src="./assets/images/orang.png" />
           </div>
         </div>
@@ -149,7 +155,7 @@ export default function Home(props) {
 
       <section id="hasil" className="hasil" style={{ marginTop: 300 }}>
         <img
-          className="position-absolute start-0"
+          className="position-absolute start-0 d-none d-sm-block"
           style={{ marginLeft: 30 }}
           src="./assets/images/squid1.png"
         />
@@ -170,13 +176,15 @@ export default function Home(props) {
             class="btn-primary encode-button"
             onClick={() => {
               navigator.clipboard.writeText(result);
-              setCopySuccess('Copied')
-              setTimeout(() => setCopySuccess(''), 1000);
+              setCopySuccess("Copied");
+              setTimeout(() => setCopySuccess(""), 1000);
             }}
           >
             Copy
           </button>
-          <p className="position-absolute start-50" style={{fontSize:12}}>{copySuccess}</p>
+          <p className="position-absolute start-50" style={{ fontSize: 12 }}>
+            {copySuccess}
+          </p>
           <img
             className="img-line2 position-absolute end-0"
             src="./assets/images/line1.png"
