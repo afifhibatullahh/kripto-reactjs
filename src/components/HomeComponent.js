@@ -1,6 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Home() {
+export default function Home(props) {
+  const API_URL = "https://kriptografi-api.herokuapp.com/api/cryptography";
+  const [isLoading, setLoading] = useState(false);
+  const [result, setResult] = useState("");
+  const [data, setData] = useState({
+    option: "modification",
+    type: "encrypt",
+    raw_text: "",
+    key: "",
+  });
+
+  const submit = (e) => {
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ data }),
+    };
+    e.preventDefault();
+    fetch(API_URL, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        setResult(data.raw_text);
+        console.log(data)
+      });
+  };
+
+  function handle(e) {
+    const newData = { ...data };
+    newData[e.target.id] = e.target.value;
+    setData(newData);
+  }
+
   return (
     <div className="container">
       <div className="row">
@@ -39,7 +70,7 @@ export default function Home() {
             </p>
           </div>
           <div className="col-6">
-            <form>
+            <form onSubmit={submit}>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">
                   Write your message
@@ -48,6 +79,9 @@ export default function Home() {
                   class="form-control"
                   id="exampleFormControlTextarea1"
                   rows="3"
+                  onChange={(e) => handle(e)}
+                  id="raw_text"
+                  value={data.raw_text}
                 ></textarea>
               </div>
 
@@ -59,8 +93,11 @@ export default function Home() {
                   <select
                     class="form-select"
                     aria-label="Default select example"
+                    value={data.option}
+                    onChange={(e) => handle(e)}
+                    id="option"
                   >
-                    <option value="1">Modification</option>
+                    <option value="modification">Modification</option>
                   </select>
                 </div>
                 <div className="col">
@@ -70,9 +107,12 @@ export default function Home() {
                   <select
                     class="form-select"
                     aria-label="Default select example"
+                    value={data.type}
+                    onChange={(e) => handle(e)}
+                    id="type"
                   >
-                    <option value="1">Enkrip</option>
-                    <option value="1">Dekrip</option>
+                    <option value="encrypt">Encryption</option>
+                    <option value="decrypt">Decryption</option>
                   </select>
                 </div>
               </div>
@@ -80,7 +120,13 @@ export default function Home() {
                 <label for="exampleFormControlInput1" class="form-label">
                   Key
                 </label>
-                <input type="text" class="form-control" />
+                <input
+                  type="text"
+                  class="form-control"
+                  value={data.key}
+                  onChange={(e) => handle(e)}
+                  id="key"
+                />
               </div>
 
               <div class="float-end">
@@ -111,18 +157,13 @@ export default function Home() {
               <hr />
             </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Egestas
-            porttitor lobortis et luctus risus tristique pellentesque. Netus
-            quam volutpat mauris morbi consectetur pellentesque. Odio diam, elit
-            a neque. Neque massa aliquet commodo malesuada dignissim. Et.
-          </p>
+          <p>{result}</p>
 
           <button class="btn-primary encode-button">Copy</button>
           <img
-          className="img-line2 position-absolute end-0"
-          src="./assets/images/line1.png"
-        />
+            className="img-line2 position-absolute end-0"
+            src="./assets/images/line1.png"
+          />
         </div>
       </section>
     </div>
