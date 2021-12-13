@@ -11,7 +11,7 @@ class Main extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{backgroundColor:'black'}}>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
