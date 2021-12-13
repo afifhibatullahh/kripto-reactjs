@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 export default function Home(props) {
   const API_URL = "https://kriptografi-api.herokuapp.com/api/cryptography";
   const [isLoading, setLoading] = useState(false);
+  const [copySuccess, setCopySuccess] = useState("");
   const [result, setResult] = useState("");
   const [data, setData] = useState({
     option: "modifikasi",
@@ -15,19 +16,19 @@ export default function Home(props) {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         option: data.option,
         type: data.type,
         raw_text: data.raw_text,
         key: data.key,
-       }),
+      }),
     };
-    e.preventDefault()
+    e.preventDefault();
     fetch(API_URL, requestOptions)
       .then((response) => response.json())
       .then((data) => {
         setResult(data);
-        console.log(data)
+        console.log(data);
         window.location.href = "#hasil";
       });
   };
@@ -165,7 +166,17 @@ export default function Home(props) {
           </div>
           <p>{result}</p>
 
-          <button class="btn-primary encode-button">Copy</button>
+          <button
+            class="btn-primary encode-button"
+            onClick={() => {
+              navigator.clipboard.writeText(result);
+              setCopySuccess('Copied')
+              setTimeout(() => setCopySuccess(''), 1000);
+            }}
+          >
+            Copy
+          </button>
+          <p className="position-absolute start-50" style={{fontSize:12}}>{copySuccess}</p>
           <img
             className="img-line2 position-absolute end-0"
             src="./assets/images/line1.png"
