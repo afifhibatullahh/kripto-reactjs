@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Header extends Component {
   render() {
     return (
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:'black'}}>
         <div class="container">
           <a class="navbar-brand" href="#">
             Navbar
