@@ -5,7 +5,7 @@ export default function Home(props) {
   const [isLoading, setLoading] = useState(false);
   const [result, setResult] = useState("");
   const [data, setData] = useState({
-    option: "modification",
+    option: "modifikasi",
     type: "encrypt",
     raw_text: "",
     key: "",
@@ -15,13 +15,18 @@ export default function Home(props) {
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ data }),
+      body: JSON.stringify({ 
+        option: data.option,
+        type: data.type,
+        raw_text: data.raw_text,
+        key: data.key,
+       }),
     };
-    e.preventDefault();
+    e.preventDefault()
     fetch(API_URL, requestOptions)
       .then((response) => response.json())
       .then((data) => {
-        setResult(data.raw_text);
+        setResult(data);
         console.log(data)
       });
   };
@@ -97,7 +102,7 @@ export default function Home(props) {
                     onChange={(e) => handle(e)}
                     id="option"
                   >
-                    <option value="modification">Modification</option>
+                    <option value="modifikasi">Modification</option>
                   </select>
                 </div>
                 <div className="col">
