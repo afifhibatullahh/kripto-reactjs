@@ -17,7 +17,7 @@ const Footer = () => {
             <hr />
           </div>
         </div>
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <p className="text-center">
             Intended for major assignments in cryptography courses Sumatra
             Institute of Technology, informatics engineering.

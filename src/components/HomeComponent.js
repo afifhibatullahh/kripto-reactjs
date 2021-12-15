@@ -48,7 +48,7 @@ export default function Home(props) {
       </Helmet>
 
       <div className="row">
-        <div className="col-8 jumbotron">
+        <div className="col-12 col-md-8 jumbotron">
           <p className="txt-border title">
             Do Simple Magic
           </p>
@@ -73,7 +73,7 @@ export default function Home(props) {
 
       <section id="kripting" className="kripting">
         <div className="row">
-          <div className="col-9">
+          <div className="col-12 col-md-9">
             <img
               className="img-line1 position-absolute start-0"
               src="./assets/images/line1.png"
