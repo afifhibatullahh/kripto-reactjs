@@ -8,7 +8,7 @@ class Header extends Component {
         style={{ backgroundColor: "black" }}
       >
         <div class="container">
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" href="#">
             Kriptos Grafos
           </a>
           <div class="collapse navbar-collapse" id="navbarNav">
