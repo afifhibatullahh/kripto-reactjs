@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/kripto-reactjs/static/css/main.009fbd95.chunk.css",
-    "main.js": "/kripto-reactjs/static/js/main.d0be8c66.chunk.js",
-    "main.js.map": "/kripto-reactjs/static/js/main.d0be8c66.chunk.js.map",
-    "runtime-main.js": "/kripto-reactjs/static/js/runtime-main.4d62487e.js",
-    "runtime-main.js.map": "/kripto-reactjs/static/js/runtime-main.4d62487e.js.map",
+    "main.js": "/kripto-reactjs/static/js/main.ef2c8be6.chunk.js",
+    "main.js.map": "/kripto-reactjs/static/js/main.ef2c8be6.chunk.js.map",
+    "runtime-main.js": "/kripto-reactjs/static/js/runtime-main.253a22c8.js",
+    "runtime-main.js.map": "/kripto-reactjs/static/js/runtime-main.253a22c8.js.map",
     "static/css/2.4659568d.chunk.css": "/kripto-reactjs/static/css/2.4659568d.chunk.css",
-    "static/js/2.74a6783c.chunk.js": "/kripto-reactjs/static/js/2.74a6783c.chunk.js",
-    "static/js/2.74a6783c.chunk.js.map": "/kripto-reactjs/static/js/2.74a6783c.chunk.js.map",
-    "static/js/3.c9b36e46.chunk.js": "/kripto-reactjs/static/js/3.c9b36e46.chunk.js",
-    "static/js/3.c9b36e46.chunk.js.map": "/kripto-reactjs/static/js/3.c9b36e46.chunk.js.map",
+    "static/js/2.9f374b8d.chunk.js": "/kripto-reactjs/static/js/2.9f374b8d.chunk.js",
+    "static/js/2.9f374b8d.chunk.js.map": "/kripto-reactjs/static/js/2.9f374b8d.chunk.js.map",
+    "static/js/3.c50fd8dc.chunk.js": "/kripto-reactjs/static/js/3.c50fd8dc.chunk.js",
+    "static/js/3.c50fd8dc.chunk.js.map": "/kripto-reactjs/static/js/3.c50fd8dc.chunk.js.map",
     "index.html": "/kripto-reactjs/index.html",
     "static/css/2.4659568d.chunk.css.map": "/kripto-reactjs/static/css/2.4659568d.chunk.css.map",
     "static/css/main.009fbd95.chunk.css.map": "/kripto-reactjs/static/css/main.009fbd95.chunk.css.map",
-    "static/js/2.74a6783c.chunk.js.LICENSE.txt": "/kripto-reactjs/static/js/2.74a6783c.chunk.js.LICENSE.txt"
+    "static/js/2.9f374b8d.chunk.js.LICENSE.txt": "/kripto-reactjs/static/js/2.9f374b8d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4d62487e.js",
+    "static/js/runtime-main.253a22c8.js",
     "static/css/2.4659568d.chunk.css",
-    "static/js/2.74a6783c.chunk.js",
+    "static/js/2.9f374b8d.chunk.js",
     "static/css/main.009fbd95.chunk.css",
-    "static/js/main.d0be8c66.chunk.js"
+    "static/js/main.ef2c8be6.chunk.js"
   ]
 }
